@@ -6,7 +6,6 @@ from django.conf import settings
 from django.utils.text import slugify
 from django.utils import timezone
 from django.urls import reverse
-from django_filters import rest_framework as django_filters
 
 
 from albums.models import Album
