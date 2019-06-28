@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="grid">
+  {% for images in images_list %}
+    {% if images.publish == 'PU' %}
+      {% include "images/_image.html" %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+{% endblock %}

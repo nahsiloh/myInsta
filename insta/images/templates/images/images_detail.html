@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+<a class="btn btn-primary icons" href="{% url 'images:edit_image' pk=images.pk %}">
+  <span class="fa fa-pencil"></span></a>
+  <a class="btn btn-primary icons" href="{% url 'images:delete_image' pk=images.pk %}">
+    <span class="fa fa-remove"></span></a>
+    {% endif %}
+
+  <h2 class="page_title">{{images.title}}</h2>
+  <h3 class="image_title_style image_count">{{images.upload_date}}</h3>
+
+  <img class="img-fluid img_detail" src="{{images.image.url}}" alt="{{images.title}}">
+
+
+{% endblock %}

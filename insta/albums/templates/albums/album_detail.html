@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<a class="btn btn-primary icons" href="{% url 'albums:album_edit' slug=album.slug %}">
+  <span class="fa fa-pencil"></span></a>
+  <a class="btn btn-primary icons" href="{% url 'albums:album_delete' slug=album.slug %}">
+    <span class="fa fa-remove"></span></a>
+    <a class="btn btn-primary icons" href="{% url 'images:create_image'%}">
+      <span class="fa fa-cloud-upload"></span></a>
+      {% endif %}
+
+  <div class="title_head">
+    <h1 class="page_title">{{album.name}}</h1>
+    <h4 class="image_description">{{album.description}}</h4>
+    <h3 class="image_title_style image_count">{{album.album_images.count}} images</h3>
+  </div>
+
+  <div class="grid">
+    {% for images in album.album_images.all%}
+      {% include "images/_image.html" %}
+    {% endfor %}
+  </div>
+
+{% endblock %}

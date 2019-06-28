@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form class="delete_button" method="POST">
+	{% csrf_token %}
+	<input type="submit" value="Confirm Delete" class="btn btn-info">
+	<a href="{% url 'albums:album_list' %}" class="btn btn-info">Cancel</a>
+</form>
+
+<img class="img-fluid img_detail" src="{{images.image.url}}" alt="{{images.title}}">
+
+
+
+{% endblock %}

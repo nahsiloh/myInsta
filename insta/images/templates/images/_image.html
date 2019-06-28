@@ -1,0 +1,7 @@
+<div class="grid-item">
+    <a href="{% url 'images:detail_image' pk=images.pk %}">
+      <img class="img-fluid" src="{{images.image.url}}" alt="{{images.title}}">
+    </a>
+    <h3 class="image_title_style"><strong>{{images.title}}</strong></h3>
+    <h4 class="image_description">{{images.description}}</h4>
+</div>

@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button type="submit" name="button">Login</button>
+    <button type="submit" name="button">
+      <a href="{% url 'accounts:signup' %}">Sign Up</a>
+    </button>
+  </form>
+</div>
+{% endblock %}

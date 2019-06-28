@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <a class="btn btn-primary icons" href="{% url 'albums:create_album'%}">
+      <span class="	fa fa-plus-circle"></span></a>
+  {% endif %}
+  <h1 class="page_title">Albums</h1>
+
+  {% for album in album_list %}
+    <div class="box">
+        {% for images in album.album_images.all|slice:"0:3"%}
+          <a class="album_img first_img" href="{% url 'images:detail_image' pk=images.pk %}">
+            <img class="img-fluid" src="{{images.image.url}}" alt="{{images.title}}">
+          </a>
+        {% endfor %}
+    </div>
+
+    <a class="image_title_style" href="{% url 'albums:album_detail' slug=album.slug %}"><strong>{{album.name}}</strong></a>
+    <h3 class="image_title_style image_count">{{album.album_images.count}} images</h3>
+
+  {% endfor %}
+
+{% endblock %}

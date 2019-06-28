@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+  <h2 class="page_title">Upload Image</h2>
+  <form method="post" enctype="multipart/form-data"
+    action="{% url 'images:create_image'%}">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    <button type="submit" class="btn btn-info">Upload</button>
+
+  </form>
+</div>
+{% endblock %}
