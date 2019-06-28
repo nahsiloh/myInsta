@@ -3,12 +3,12 @@
 
 {% block content %}
 <div class="container">
-  <h2>Login</h2>
+  <h2 class="page_title">Login</h2>
   <form method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
-    <button type="submit" name="button">Login</button>
-    <button type="submit" name="button">
+    <button type="submit" class="btn btn-info">Login</button>
+    <button type="button" class="btn btn-info">
       <a href="{% url 'accounts:signup' %}">Sign Up</a>
     </button>
   </form>
