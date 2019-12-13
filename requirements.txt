@@ -1,5 +1,5 @@
 django
-django-bootstap4
+django-bootstrap4
 pillow
 gunicorn
 django-heroku
