@@ -2,5 +2,6 @@ django
 django-bootstrap4
 pillow
 python-dotenv
+django-storages
 gunicorn
 django-heroku
