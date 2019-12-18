@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG_VALUE = os.environ['DEBUG_VALUE']
+DEBUG = os.environ['DEBUG_VALUE']
 
 ALLOWED_HOSTS = ["myinstajournal.herokuapp.com"]
 
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wsgi.application'
+WSGI_APPLICATION = 'insta.wsgi.application'
 
 
 # Database
