@@ -24,9 +24,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG_VALUE = os.environ['DEBUG_VALUE']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["myinstajournal.herokuapp.com"]
 
 
 # Application definition
